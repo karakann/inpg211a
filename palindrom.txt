@@ -2,7 +2,7 @@
 #define SIZE 100
 
 int palindrom(char *, int dlugosc);
-
+zmiana w 5 linijce
 main()
 {
     char napis[SIZE];
