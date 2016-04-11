@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define SIZE 100
+
+int palindrom(char *, int dlugosc);
+
+main()
+{
+    char napis[SIZE];
+    int dlugosc=0;
+    int i=0;
+    printf("Podaj wyraz: ");
+    fgets(napis, SIZE, stdin);
+    for(i=0; napis[i]!='\0'; i++)
+    {
+        dlugosc ++;
+    }
+    dlugosc=dlugosc-1;
+    switch(palindrom(napis, dlugosc))
+    {
+        case 1:
+        printf("Ten wyraz jest palindromem \n");
+        break;
+        case 0:
+        printf("Ten wyraz nie jest palindromem \n");
+        break;
+    }
+}
+
+int palindrom(char * napis, int dlugosc)
+{
+    if(dlugosc==0 || dlugosc==1)
+    {
+        return 1;
+    }
+    if(napis[0]==napis[dlugosc-1])
+    {
+        palindrom(napis+1, dlugosc-2);
+    }
+    else
+    {
+        return 0;
+    }
+}
